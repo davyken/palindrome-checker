@@ -1,14 +1,14 @@
- function palindromeTest(str) {
+function palindromeTest (str) {
   let l = str.length - 1
   for (let i = 0; i < l / 2; i++) {
-      if (str[i] !== str[l]) {
-    return false
+    if (str[i] !== str[l]) {
+      return false
     }
     l--
   }
   return true
 }
- function checkPalindrome() {
+function checkPalindrome () {
   const pali = document.getElementById('text-area').value
   const Ispalindrome = palindromeTest(pali)
   const E = document.getElementById('result')
