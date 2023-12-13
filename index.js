@@ -1,11 +1,6 @@
 function palindromeTest(str) {
-
     let l = str.length - 1
-
-
     for (let i = 0; i < l / 2; i++) {
-
-
         if (str[i] !== str[l]) {
             return false
         }
