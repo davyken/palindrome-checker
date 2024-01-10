@@ -1,4 +1,4 @@
-function palindromeTest (str) {
+function palindromeTest(str) {
   const strArr = str.split(' ').join('')
   let s = strArr.length - 1
   for (let i = 0; i < s / 2; i++) {
@@ -10,13 +10,10 @@ function palindromeTest (str) {
   return true
 }
 
-function checkPalindrome () {
-  
+function checkPalindrome() {
   const pali = document.getElementById('text-area').value
-  
   const isPalindrome = palindromeTest(pali)
   const E = document.getElementById('result')
-  
   if (isPalindrome) {
     E.innerHTML = 'Correct, It is a  palindrome'
   } else {
