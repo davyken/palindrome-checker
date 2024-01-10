@@ -11,6 +11,7 @@ function palindromeTest(str) {
 }
 
 function checkPalindrome() {
+  
   const pali = document.getElementById('text-area').value
   const isPalindrome = palindromeTest(pali)
   const E = document.getElementById('result')
