@@ -1,26 +1,30 @@
-function palindromeTest(str) {
-
-    let l = str.length - 1
-
-
-    for (let i = 0; i < l / 2; i++) {
-
-
-        if (str[i] !== str[l]) {
-            return false
-        }
-        l--
+// check for input string
+function palindromeTest (str) {
+  const strArr = str.split(' ').join('')
+  let s = strArr.length - 1
+  for (let i = 0; i < s / 2; i++) {
+    if (strArr[i] !== strArr[s]) {
+      return false
     }
-    return true
+    s--
+  }
+  return true
 }
-function checkPalindrome() {
-    const pali = document.getElementById('text-area').value
-    const Ispalindrome = palindromeTest(pali)
-    const E = document.getElementById('result')
-    if (Ispalindrome) {
-        E.innerHTML = 'Correct, it is a Palindrome !'
-    } else {
-        E.innerHTML = 'Sorry, it is not a Palindrome !'
-    }
+
+function checkPalindrome () {
+  // get the values from html
+  const pali = document.getElementById('text-area').value
+  // console.log(pali)
+  const isPalindrome = palindromeTest(pali)
+  const E = document.getElementById('result')
+  // console.log(E)
+  // the if condition to check if it's palindrome
+  if (isPalindrome) {
+    E.innerHTML = 'Correct, It is a  palindrome'
+  } else {
+    E.innerHTML = 'Sorry, it is not palindrome'
+  }
 }
-checkPalindrome()
+if (onclick) {
+  checkPalindrome()
+}
