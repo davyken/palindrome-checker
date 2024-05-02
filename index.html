@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palindrome Checker</title>
+  <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
-
 <body>
-    <h1>Here Is a Palindrome Checker !</h1>
-    <div id="style">
-        <input type="text" id="text-area" placeholder="Enter your string here..">
-        <button onclick="checkPalindrome()">Done</button>
-        <div>
-            <p id="result"></p>
-        </div>
-    </div>
+  <input type="text" id="text-area" placeholder="Enter a phrase">
+  <button onclick="checkPalindrome()">Check</button>
+  <p id="result"></p>
 
-    <script src="index.js"></script>
+  <script>
+    function palindrome(str) {
+      const cleanedStr = str.replace(/[^a-zA-Z]/g, '').toLowerCase();
+      let j = cleanedStr.length - 1;
+
+      for (let i = 0; i <= j / 2; i++) {
+        if (cleanedStr[i] !== cleanedStr[j]) {
+          return false;
+        }
+        j--;
+      }
+      return true;
+    }
+
+    function checkPalindrome() {
+      const phrase = document.getElementById('text-area').value;
+      const isPalindrome = palindrome(phrase);
+
+      const answer = document.getElementById('result');
+      if (isPalindrome) {
+        answer.innerHTML = 'The phrase entered is a Palindrome';
+      } else {
+        answer.innerHTML = 'The phrase entered is not a Palindrome';
+      }
+    }
+  </script>
 </body>
-
 </html>
